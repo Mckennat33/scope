@@ -8,9 +8,6 @@ import NewsList from './components/NewsList'
 import { useEffect, useState } from 'react';
 
 
-
-
-
 function App() {
   const API_KEY = "4ed321713058453c94b7d1366784440e"
   const URL = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`
@@ -21,8 +18,11 @@ function App() {
       const response = await fetch(URL) 
       if (!response.ok) throw new Error(`HTTPS Error! Status: ${response.status}`)
       const results = await response.json()
-      setNewsData(results)
+      setNewsData((prevState) => {
+        return {...prevState, results}
+      })
       
+      console.log(newsData)
     } 
 
     fetchNewsData()
