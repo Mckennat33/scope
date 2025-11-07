@@ -19,15 +19,18 @@ function App() {
       const response = await fetch(URL) 
       if (!response.ok) throw new Error(`HTTPS Error! Status: ${response.status}`)
       const results = await response.json()
+      // try setNewsData(results.articles)
       setNewsData(results)
     } 
     fetchNewsData()
   }, [])
   
-  // console.log(newsData.articles)
-  
-  
 
+  const articlesArray = newsData?.articles
+  if (articlesArray === undefined) return
+  articlesArray.map(article => console.log(article))
+
+  // let content = <p>{article}</p>
   return (
     <div className="App">
       <header className="App-header">
@@ -36,7 +39,8 @@ function App() {
         <Header />
         <Error />
         <Loader />
-        <NewsCard />
+        
+        <NewsCard news={newsData} />
         <NewsList />
 
 
