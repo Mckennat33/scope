@@ -1,8 +1,16 @@
 import React from 'react'
 
-function NewsCard() {
+
+
+function NewsCard({news}) {
+    
     return (
-        <h1>NewsCard</h1>
+        <>
+        <h1>Newscard</h1>
+            <p>{console.log(news)}</p>
+            <p>Hello</p>
+            
+        </>
     )
 }
 

@@ -12,24 +12,21 @@ function App() {
   const API_KEY = "4ed321713058453c94b7d1366784440e"
   const URL = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`
   const [ newsData, setNewsData ] = useState({})
+  const [ isLoading, setIsLoading ] = useState(true)
    
   useEffect(() => {
     async function fetchNewsData() {
       const response = await fetch(URL) 
       if (!response.ok) throw new Error(`HTTPS Error! Status: ${response.status}`)
       const results = await response.json()
-      setNewsData((prevState) => {
-        return {...prevState, results}
-      })
-      
-      console.log(newsData)
+      setNewsData(results)
     } 
-
     fetchNewsData()
-
   }, [])
-
-
+  
+  // console.log(newsData.articles)
+  
+  
 
   return (
     <div className="App">
