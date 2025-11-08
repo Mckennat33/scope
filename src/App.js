@@ -29,12 +29,10 @@ function App() {
 
   const articlesArray = newsData?.articles
   if (articlesArray === undefined) return
-  articlesArray.map((article) => {
-    const { author, content, description, publichedAt, source, title, url, urlToImage } = article
-    console.log(article, content)
-    // what is one of the items is null? 
-    // look at each element to see if null if null return 'unknown'
-  })
+  // articlesArray.map((article) => {
+  //   const { author, content, description, publichedAt, source, title, url, urlToImage } = article
+
+  // })
 
 
 // search feature
@@ -52,10 +50,30 @@ function App() {
             placeholder='Search...'
           />
         </div>
+        
+        {articlesArray.map((article) => {
+          const { author, content, description, publichedAt, source, title, url, urlToImage } = article
+          return (
+            <NewsCard 
+              author={author}
+              content={content}
+              description={description}
+              publichedAt={publichedAt}
+              source={source}
+              title={title}
+              url={url}
+              urlToImage={urlToImage}
+            
+            />
+          )
+          
+          // what is one of the items is null? 
+          // look at each element to see if null if null return 'unknown'
+        })}
+        
         <Header  />
         <Error />
         <Loader />
-        <NewsCard news={newsData} />
         <NewsList />
       </header>
     </div>
