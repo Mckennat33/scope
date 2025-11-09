@@ -9,34 +9,41 @@ import { useEffect, useState } from 'react';
 
 
 function App() {
+  // new apit
+  const newApiKey = "7c2ddfe3aaeb1c5c008a2aa7f2c9a6e6"
+  const newUrl = `https://gnews.io/api/v4/top-headlines?category=general&apikey=${newApiKey}`
+  useEffect(() => {
+    async function fetchNewNewsData() {
+      const response = await fetch(newUrl) 
+      if (!response.ok) throw new Error(`HTTPS error! Status: ${response.status}`)
+      const newResult = await response.json() 
+      setNewsData(newResult)
+        }
+    fetchNewNewsData()
+  }, [])
+
+  
+  /// OLD api
   const API_KEY = "4ed321713058453c94b7d1366784440e"
   const URL = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`
   const [ newsData, setNewsData ] = useState({})
   const [ isLoading, setIsLoading ] = useState(true)
   const [ search, setSearch ] = useState('')
    
-  useEffect(() => {
-    async function fetchNewsData() {
-      const response = await fetch(URL) 
-      if (!response.ok) throw new Error(`HTTPS Error! Status: ${response.status}`)
-      const results = await response.json()
-      setNewsData(results)
-      console.log(newsData)
-    } 
-    fetchNewsData()
-  }, [])
+  // useEffect(() => {
+  //   async function fetchNewsData() {
+  //     const response = await fetch(URL) 
+  //     if (!response.ok) throw new Error(`HTTPS Error! Status: ${response.status}`)
+  //     const results = await response.json()
+  //     // setNewsData(results)
+  //     // console.log(newsData)
+  //   } 
+  //   fetchNewsData()
+  // }, [])
  
 
   const articlesArray = newsData?.articles
   if (articlesArray === undefined) return
-  // articlesArray.map((article) => {
-  //   const { author, content, description, publichedAt, source, title, url, urlToImage } = article
-
-  // })
-
-
-// search feature
-// filter out what is in search state to match whatever is in the newsdata
 
   // let content = <p>{article}</p>
   return (
@@ -53,6 +60,7 @@ function App() {
         
         {articlesArray.map((article) => {
           const { author, content, description, publichedAt, source, title, url, urlToImage } = article
+          // console.log(article)
           return (
             <NewsCard 
               author={author}
