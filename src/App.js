@@ -9,56 +9,44 @@ import { useEffect, useState } from 'react';
 
 
 function App() {
-  // new apit
-  const newApiKey = "7c2ddfe3aaeb1c5c008a2aa7f2c9a6e6"
-  const newUrl = `https://gnews.io/api/v4/top-headlines?category=general&apikey=${newApiKey}`
-  useEffect(() => {
-    async function fetchNewNewsData() {
-      const response = await fetch(newUrl) 
-      if (!response.ok) throw new Error(`HTTPS error! Status: ${response.status}`)
-      const newResult = await response.json() 
-      setNewsData(newResult)
-        }
-    fetchNewNewsData()
-  }, [])
-
-  
-  /// OLD api
   const API_KEY = "4ed321713058453c94b7d1366784440e"
   const URL = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`
-  const [ newsData, setNewsData ] = useState({})
+  const [ newsData, setNewsData ] = useState([]) // make sure this is correct 
   const [ isLoading, setIsLoading ] = useState(true)
   const [ search, setSearch ] = useState('')
-   
-  // useEffect(() => {
-  //   async function fetchNewsData() {
-  //     const response = await fetch(URL) 
-  //     if (!response.ok) throw new Error(`HTTPS Error! Status: ${response.status}`)
-  //     const results = await response.json()
-  //     // setNewsData(results)
-  //     // console.log(newsData)
-  //   } 
-  //   fetchNewsData()
-  // }, [])
- 
+  const [test, setTest ] = useState('')
 
-  const articlesArray = newsData?.articles
-  if (articlesArray === undefined) return
+  useEffect(() => {
+    async function fetchNewsData() {
+      const response = await fetch(URL) 
+      if (!response.ok) throw new Error(`HTTPS Error! Status: ${response.status}`)
+      const results = await response.json()
+      setNewsData(results?.articles) // make sure this is correct 
+      console.log(newsData)
+    } 
+    fetchNewsData()
+  }, [])   
+  
+  const filterData = newsData.filter((art) => {
+      console.log(art.author)
+  })
+
+
 
   // let content = <p>{article}</p>
-  return (
+  return ( 
     <div className="App">
       <header className="App-header">
         <div className='search-news'>
           <input 
             type='text'
             className='input'
-            onChange={(e) =>  setSearch(e.target.value)}
+            onChange={(e) => setSearch(e.target.value)}
             placeholder='Search...'
           />
         </div>
-        
-        {articlesArray.map((article) => {
+
+        {newsData.map((article) => {
           const { author, content, description, publichedAt, source, title, url, urlToImage } = article
           // console.log(article)
           return (
@@ -74,9 +62,6 @@ function App() {
             
             />
           )
-          
-          // what is one of the items is null? 
-          // look at each element to see if null if null return 'unknown'
         })}
         
         <Header  />
