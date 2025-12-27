@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* sign up page */
+
+.sign-up-page {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-up-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+}
+

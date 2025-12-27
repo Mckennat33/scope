@@ -16,32 +16,31 @@ const SignUp = () => {
 
     return (
         <>
-            <h1>Sign Up Page</h1>
-            <form action="" onSubmit={handleSubmitForm}>
-                <div>
-                    <label htmlFor="firstname">First Name:</label>
-                    <input type="text" name='first name' />
-                </div>
-                <div>
-                    <label htmlFor="lastname">Last Name:</label>
-                    <input type="text" />
-                </div>
-                <div>
-                    <label htmlFor="username">Username: </label>
-                    <input type="text" name="" id="" />
-                </div>
-                <div>
-                    <label htmlFor="email">Email:</label>
-                    <input type="email" name="email" id="" />
-                </div>
-                <div>
-                    <label htmlFor="">Passwork</label>
-                    <input type="password" name='password'/>
-                </div>
-                <div className='tier-container'>
+        <div className='sign-up-page'>
 
+            <div className='sign-up-container'>
+                <h1>Create Your Account</h1>
+                <div className='form-container'>
+                    <form action="" onSubmit={handleSubmitForm}>
+                        <div>
+                            <label htmlFor="username"></label>
+                            <input type="text" name="username" id="username" placeholder='Username'  />
+                        </div>
+                        <div>
+                            <label htmlFor="email"></label>
+                            <input type="email" name="email" id="email" placeholder='Email' />
+                        </div>
+                        <div>
+                            <label htmlFor=""></label>
+                            <input type="password" name='password' id='password' placeholder='Password'/>
+                        </div>
+                        <div className='tier-container'>
+
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
+        </div>
         </>
     )
 }
