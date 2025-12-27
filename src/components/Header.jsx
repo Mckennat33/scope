@@ -1,8 +1,11 @@
 import React from 'react'
 
-function Header() {
+function Header({searchItem}) {
     return (
-        <h1>Header</h1>
+        <>
+            <p>Header</p>
+            {/* <h1>{searchItem}</h1> */}
+        </>
     )
 }
 
