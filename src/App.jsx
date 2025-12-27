@@ -22,9 +22,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           {loggedIn ? (
-                <Route path="/signup" element={<SignUp />} />
-              ) : (
                 <Route path='/home' element={<Home />} />
+              ) : (
+                <Route path="/" element={<SignUp />} />
               )
             } 
           )
