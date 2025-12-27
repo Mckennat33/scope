@@ -10,7 +10,7 @@ const SignUp = () => {
     const [userName, setUserName ] = useState('')
     const [email, setEmail ] = useState('')
     const [password, setPassword ] = useState('')
-    
+
     return (
         <>
         <div className='sign-up-page'>
@@ -41,11 +41,11 @@ const SignUp = () => {
                     <div className='tier-free'>
                         <p>Free</p>
                     </div>
-                    <div className='tier-pro'>
-                        <p>Pro</p>
+                    <div className='tier-standard'>
+                        <p>Standard</p>
                     </div>
-                    <div className='tier-mega'>
-                        <p>Mega</p>
+                    <div className='tier-premium'>
+                        <p>Premium</p>
                     </div>
                 </div>
             </div>
