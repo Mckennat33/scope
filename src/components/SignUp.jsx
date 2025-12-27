@@ -7,13 +7,10 @@ function handleSubmitForm() {
 }
 
 const SignUp = () => {
-    const [ userData, setUserData ] = useState({
-        firstName: '',
-        lastName: '', 
-        userEmail: '', 
-        password: ''
-    })
-
+    const [userName, setUserName ] = useState('')
+    const [email, setEmail ] = useState('')
+    const [password, setPassword ] = useState('')
+    
     return (
         <>
         <div className='sign-up-page'>
@@ -38,6 +35,18 @@ const SignUp = () => {
 
                         </div>
                     </form>
+                </div>
+
+                <div className='tier-container'>
+                    <div className='tier-free'>
+                        <p>Free</p>
+                    </div>
+                    <div className='tier-pro'>
+                        <p>Pro</p>
+                    </div>
+                    <div className='tier-mega'>
+                        <p>Mega</p>
+                    </div>
                 </div>
             </div>
         </div>

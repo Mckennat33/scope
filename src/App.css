@@ -50,8 +50,28 @@
 .sign-up-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: space-around; */
   align-items: center;
   border: 2px solid black;
 }
 
+.tier-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.tier-free {
+  display: flex;
+  border: 2px solid black;
+}
+
+.tier-pro {
+  display: flex;
+  border: 2px solid black;
+}
+
+.tier-mega {
+  display: flex;
+  border: 2px solid black;
+}
