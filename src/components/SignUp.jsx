@@ -51,6 +51,7 @@ function handleSubmitForm() {
                             <button>Select Free</button>
                         </div>
                     </div>
+                    <div className='tier-standard'>
                         <div className='standard-header'>
                             <h4>Standard</h4>
                         </div>
@@ -61,6 +62,8 @@ function handleSubmitForm() {
                             <p>Daily newsletter</p>
                             <button>Select Standard</button>
                         </div>
+                    </div>
+                    <div className='tier-premium'>
                         <div className='premium-header'>
                             <h4>Premium</h4>
                         </div>
@@ -71,6 +74,7 @@ function handleSubmitForm() {
                             <p>Exlusive newsletter</p>
                             <button>Select Premium</button>
                         </div>
+                    </div>
                 </div>
             </div>
         </div>
