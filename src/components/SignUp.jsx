@@ -1,15 +1,16 @@
 import React from 'react'
 import { useState } from 'react'
 
+const SignUp = () => {
+    const [userName, setUserName ] = useState('')
+    const [email, setEmail ] = useState('')
+    const [password, setPassword ] = useState('')
 
 function handleSubmitForm() {
 
 }
 
-const SignUp = () => {
-    const [userName, setUserName ] = useState('')
-    const [email, setEmail ] = useState('')
-    const [password, setPassword ] = useState('')
+
 
     return (
         <>
@@ -39,14 +40,37 @@ const SignUp = () => {
 
                 <div className='tier-container'>
                     <div className='tier-free'>
-                        <p>Free</p>
+                        <div className='free-header'>
+                            <h4>Free</h4>
+                        </div>
+                        <div className='free-notes'>
+                            <p>3 Articles per day</p>
+                            <p>Trending News access</p>
+                            <p>Limited comments</p>
+                            <p>Basic Newsletter</p>
+                            <button>Select Free</button>
+                        </div>
                     </div>
-                    <div className='tier-standard'>
-                        <p>Standard</p>
-                    </div>
-                    <div className='tier-premium'>
-                        <p>Premium</p>
-                    </div>
+                        <div className='standard-header'>
+                            <h4>Standard</h4>
+                        </div>
+                        <div className='standard-notes'>
+                            <p>10 articles per day</p>
+                            <p>Trending & reccomended</p>
+                            <p>Unlimited comments</p>
+                            <p>Daily newsletter</p>
+                            <button>Select Standard</button>
+                        </div>
+                        <div className='premium-header'>
+                            <h4>Premium</h4>
+                        </div>
+                        <div className='premium-notes'>
+                            <p>Umlimted articles</p>
+                            <p>Premium content</p>
+                            <p>Comments & save articles</p>
+                            <p>Exlusive newsletter</p>
+                            <button>Select Premium</button>
+                        </div>
                 </div>
             </div>
         </div>
