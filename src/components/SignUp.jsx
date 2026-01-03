@@ -6,7 +6,9 @@ const SignUp = () => {
     const [email, setEmail ] = useState('')
     const [password, setPassword ] = useState('')
 
-function handleSubmitForm() {
+function handleSubmitForm(e) {
+    e.preventDefault()
+    console.log(userName)
 
 }
 
@@ -15,14 +17,15 @@ function handleSubmitForm() {
     return (
         <>
         <div className='sign-up-page'>
-
             <div className='sign-up-container'>
                 <h1>Create Your Account</h1>
                 <div className='form-container'>
                     <form action="" onSubmit={handleSubmitForm}>
                         <div>
                             <label htmlFor="username"></label>
-                            <input type="text" name="username" id="username" placeholder='Username'  />
+                            <input type="text" name="username" id="username" placeholder='Username' 
+                                onChange={(e) => {setUserName(e.target.value)}}
+                            />
                         </div>
                         <div>
                             <label htmlFor="email"></label>
@@ -35,8 +38,6 @@ function handleSubmitForm() {
                         <div className='tier-container'>
 
                         </div>
-                    </form>
-                </div>
 
                 <div className='tier-container'>
                     <div className='tier-free'>
@@ -76,6 +77,16 @@ function handleSubmitForm() {
                         </div>
                     </div>
                 </div>
+
+
+                    </form>
+                </div>
+
+
+
+
+
+
             </div>
         </div>
         </>
