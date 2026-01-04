@@ -7,3 +7,5 @@ function NewsList() {
 }
 
 export default NewsList; 
+
+

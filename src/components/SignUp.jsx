@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Children } from 'react'
 import { useState } from 'react'
 
 const SignUp = () => {
@@ -8,8 +8,25 @@ const SignUp = () => {
 
 function handleSubmitForm(e) {
     e.preventDefault()
-    console.log(userName, email, password)
+    const userSignUpInfo = {
+        username: userName, 
+        email: email, 
+        password: password
+    }
 
+async function signUpUser() {
+    const response = await fetch(URL, {
+        method: 'POST', 
+        headers: {
+            'Content-Type': 'application/json', 
+        }, 
+        body: JSON.stringify()
+    })
+}
+
+
+
+    console.log(userSignUpInfo)
 }
 
 
@@ -83,8 +100,6 @@ function handleSubmitForm(e) {
                                 </div>
                             </div>
                         </div>
-
-
                     </form>
                 </div>
             </div>
@@ -95,5 +110,6 @@ function handleSubmitForm(e) {
 
 
 export default SignUp; 
+
 
 
