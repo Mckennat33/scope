@@ -19,6 +19,7 @@ async function signUpUser() {
         method: 'POST', 
         headers: {
             'Content-Type': 'application/json', 
+            indclude: 'credentials'
         }, 
         body: JSON.stringify()
     })
