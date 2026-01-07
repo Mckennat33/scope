@@ -5,6 +5,9 @@ const PORT = 3000;
 
 app.use(express.json())
 
+app.post('', (req, res) => {
+    
+})
 
 
 app.listen(PORT, () => {
