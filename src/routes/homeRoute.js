@@ -7,4 +7,5 @@ app.use(express.json())
 
 app.get('/home', homeController.getHomeContent) 
 
-app.post()
+app.post('/home')
+
