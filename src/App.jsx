@@ -9,12 +9,12 @@ import NewsList from './components/NewsList'
 import SignUp from './components/SignUp';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useState } from 'react';
-
+import Profile from './pages/Profile'
 
 // do I want to add a sidepanel for maybe world news? 
 
 function App() {
-  const [ loggedIn, setLoggedIn ] = useState(false)
+  const [ loggedIn, setLoggedIn ] = useState(true)
 
   // if user is not loggin in - return sign up page
   return (
@@ -27,7 +27,7 @@ function App() {
                 <Route path="/" element={<SignUp />} />
               )
             } 
-          
+          <Route path='/profile' element={<Profile />} />
         </Routes> 
       </BrowserRouter>
     </div>
