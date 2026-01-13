@@ -15,8 +15,6 @@ import Profile from './pages/Profile'
 
 function App() {
   const [ loggedIn, setLoggedIn ] = useState(true)
-
-  // if user is not loggin in - return sign up page
   return (
     <div>
       <BrowserRouter>
@@ -31,21 +29,7 @@ function App() {
         </Routes> 
       </BrowserRouter>
     </div>
-  
-
-
-
-    // <div className="App">
-    //   <header className="App-header">
-    //     <Header />
-        
-    //     <Error />
-    //     <Loader />
-    //     <NewsList />
-    //   </header>
-    // </div>
   );
 }
 
-    
 export default App;
