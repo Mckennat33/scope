@@ -8,16 +8,10 @@ app.use(express.json())
 app.use('/home', homeRoute)
 
 app.get("/profile", (req, res) => {
-    res.json(
-        [{
-            name: 'Thomas', 
-            age: 34
-        }]
-)
+    res.json()
 })
 
 
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`)
-
 })
